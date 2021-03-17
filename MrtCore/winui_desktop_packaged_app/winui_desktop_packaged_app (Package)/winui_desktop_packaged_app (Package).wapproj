@@ -41,7 +41,6 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
     <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
-    <EntryPointProjectUniqueName>..\winui_desktop_packaged_app\winui_desktop_packaged_app.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -73,12 +72,8 @@
     <PkgMicrosoft_ProjectReunion_WinUI Condition="!Exists($(PkgMicrosoft_ProjectReunion_WinUI))">$(SolutionDir)packages\Microsoft.ProjectReunion.WinUI.0.5.0-prerelease\</PkgMicrosoft_ProjectReunion_WinUI>
     <Microsoft_ProjectReunion_AppXReference_props>$([MSBuild]::NormalizeDirectory('$(PkgMicrosoft_ProjectReunion)', 'build'))Microsoft.ProjectReunion.AppXReference.props</Microsoft_ProjectReunion_AppXReference_props>
     <Microsoft_WinUI_AppX_targets>$([MSBuild]::NormalizeDirectory('$(PkgMicrosoft_ProjectReunion_WinUI)', 'build'))Microsoft.WinUI.AppX.targets</Microsoft_WinUI_AppX_targets>
+    <EntryPointProjectUniqueName>..\winui_desktop_packaged_app\winui_desktop_packaged_app.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
-  <ItemGroup>
-    <SDKReference Include="Microsoft.VCLibs.Desktop, Version=14.0" />
-    <!-- Needed for ucrtbased.dll when running a debug build. -->
-    <SDKReference Include="Microsoft.VCLibs, Version=14.0" Condition="'$(Configuration)' == 'Debug'" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
         <ExcludeAssets>all</ExcludeAssets>
