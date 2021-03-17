@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.0-prerelease" />
     <PackageReference Include="Microsoft.VCRTForwarders.140" Version="1.0.7" />
-    <PackageReference Include="Microsoft.WinUI" Version="3.0.0-preview3.201113.0" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
